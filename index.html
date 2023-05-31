@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <p>This is the web essentials class demo.</p>
+    <button id="myButton">Alert Text</button>
+    <ul class="myList">
+        <li>Nahla</li>
+        <li>Sarge</li>
+        <li>Meka</li>
+        <li>Gunny</li>
+        <li>Lady</li>
+        <li>Sampson</li>
+    </ul>
+    <button id="animate">Animate the Box!</button>
+    <div 
+    id="myBox" 
+    style="
+    background: yellow;
+    height: 400px;
+    width: 400px;
+    position: absolute;
+    margin-top: 15px;
+    "
+    ></div>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" 
+    integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"
+    ></script>
+    <script>
+        $(function () {
+            $("#myButton").on("click", function () {
+                alert("Hello!");
+                $("h1").css("color", "red");
+                $("p").css("color", "green");
+            }); 
+
+            $(".myList li").each(function(index) {
+                console.log(index + ": " + $(this).text());
+            });
+
+            $("#animate").on("click", function () {
+                $("#myBox").animate({left: "1000px"}, "fast", function () {
+                    alert("Finished!");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
